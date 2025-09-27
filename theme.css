@@ -1,0 +1,213 @@
+/* ===========================
+   Theme moderne global
+   =========================== */
+
+/* Couleurs principales */
+:root {
+  --bg: #f5f7ff;
+  --surface: #ffffff;
+  --text: #0f1e34;
+  --sub: #667085;
+  --primary: #5b72ff;
+  --primary2: #7d8aff;
+  --success: #42c28a;
+  --danger: #ff5a7f;
+  --gold: #d4af37;
+  --shadow: 0 12px 28px rgba(15,25,45,.10);
+}
+
+/* Reset & corps */
+* { box-sizing: border-box; }
+html, body { 
+    height: 100%; 
+    margin: 0; 
+    font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial; 
+    color: var(--text); 
+    background: linear-gradient(180deg,#f7f9ff 0%,#eef3ff 100%); 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    animation: fade .5s both; 
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg,#0b1220,#142042)!important;
+  box-shadow:0 10px 26px rgba(10,16,32,.28);
+}
+.navbar .navbar-brand { 
+    color:#fff!important; 
+    font-weight:800; 
+    letter-spacing:.5px; 
+    text-transform:uppercase; 
+}
+.navbar .nav-link { 
+    color:rgba(255,255,255,.92)!important; 
+    transition:transform .16s,color .16s; 
+}
+.navbar .nav-link:hover { 
+    color:var(--primary2)!important; 
+    transform:translateY(-2px); 
+}
+
+/* Containers & cards */
+.container { max-width:1150px; }
+.card, .card-custom, .bg-white {
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(250,252,255,.98));
+  border:0!important;
+  border-radius:14px!important;
+  box-shadow:var(--shadow);
+}
+.shadow, .shadow-sm, .shadow-lg { box-shadow: var(--shadow)!important; }
+
+/* Buttons */
+.btn { border-radius:10px; transition: transform .14s, box-shadow .14s; }
+.btn-primary {
+  background: linear-gradient(90deg,var(--primary),var(--primary2));
+  border:0;
+  box-shadow:0 10px 24px rgba(91,114,255,.24);
+}
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 16px 32px rgba(91,114,255,.28); }
+.btn-outline-primary { border-color:var(--primary); color:var(--primary); }
+.btn-outline-primary:hover { background:var(--primary); color:#fff; }
+.btn-success { background: linear-gradient(90deg,var(--success),#7fe0bb); border:0; }
+.btn-danger { background: linear-gradient(90deg,var(--danger),#ff7b97); border:0; }
+
+/* Boutons doré/bleu */
+.btn-gold-blue {
+    background: linear-gradient(135deg, var(--gold), var(--primary));
+    color: #fff;
+    border: 0;
+    border-radius: 12px;
+    padding: 8px 18px;
+    font-weight: 600;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-gold-blue:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(0,0,0,0.25);
+}
+
+/* Forms */
+.form-control {
+  border-radius:10px;
+  border:1px solid rgba(14,27,43,.10);
+  background:linear-gradient(180deg,#fff,#fbfdff);
+  transition: box-shadow .12s, transform .12s, border-color .12s;
+  padding:10px 12px;
+}
+.form-control:focus {
+  border-color: rgba(91,114,255,.6);
+  box-shadow:0 10px 22px rgba(91,114,255,.12);
+  transform:translateY(-1px);
+  outline:none;
+}
+.form-label { font-weight:600; color:#0f1e34; }
+
+/* Tables */
+.table { 
+    border-collapse: separate; 
+    border-spacing:0 6px; 
+    width:100%;
+}
+.table thead th {
+  background: linear-gradient(90deg,rgba(91,114,255,.08),rgba(108,227,180,.04));
+  border:0!important;
+  color:#0f1e34;
+  font-weight:700;
+  padding: 12px 15px;
+}
+.table tbody tr { 
+    background:#fff; 
+    box-shadow:0 4px 12px rgba(15,25,45,.06); 
+    transition: transform .2s, background .2s;
+}
+.table tbody tr:hover { 
+    background:rgba(91,114,255,.03); 
+    transform:translateY(-1px); 
+}
+.table td, .table th { border:0!important; padding: 12px 15px; }
+
+/* Alerts */
+.alert { border-radius:12px; box-shadow:0 8px 20px rgba(15,25,45,.06); padding: 12px 16px; margin-bottom: 16px; }
+
+/* ===========================
+   Login Magnifique + Animations
+   =========================== */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background: radial-gradient(circle at top left, rgba(91,114,255,.15), transparent),
+             radial-gradient(circle at bottom right, rgba(108,227,180,.15), transparent);
+  animation: fade 0.5s both;
+}
+
+.login-card {
+  width: 400px;
+  border-radius: 16px;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(250,252,255,.98));
+  box-shadow: 0 20px 50px rgba(12,18,33,.16);
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp .6s both;
+}
+
+.login-card::before {
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  right:-60px;
+  top:-60px;
+  background: radial-gradient(circle at 30% 30%, rgba(91,114,255,.16), rgba(108,227,180,.08));
+  transform: rotate(25deg);
+}
+
+.login-card h4 {
+  margin-bottom: 8px;
+  font-weight: 800;
+  color: #0f1e34;
+  font-size: 20px;
+}
+
+.login-sub {
+  color: #667085;
+  margin-bottom: 16px;
+}
+
+/* Animations */
+@keyframes fade { from{opacity:0;} to{opacity:1;} }
+@keyframes fadeUp { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+
+/* Badge helper */
+.badge-soft {
+  display:inline-block;
+  padding:.35rem .6rem;
+  border-radius:999px;
+  background: rgba(91,114,255,.10);
+  color:#5b72ff;
+  font-weight:700;
+}
+
+/* ===========================
+   Page spécifique diplômes
+   =========================== */
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--gold);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 600px) {
+    .table td, .table th {
+        padding: 10px 8px;
+    }
+}
